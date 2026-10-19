@@ -9,10 +9,11 @@ Open `index.html` directly in a browser, or use VS Code Live Preview. No install
 ## Current features
 
 - Responsive Home page with background, AI interests, and Ravens fandom.
+- About Me page covering freshman studies at NJIT, a preference for hands-on work, and goals in AI and robotics.
 - Keyboard-accessible mobile navigation and a dark mode toggle.
 - Plain HTML, CSS, and JavaScript with no external dependencies.
 
-About, Projects, Skills, and Contact pages will be added in subsequent tasks. Home currently uses links to its own sections. GitHub Pages deployment has not yet been verified.
+Projects, Skills, and Contact pages will be added in subsequent tasks. Home and About Me are linked through shared navigation. GitHub Pages deployment has not yet been verified.
 
 See `TESTING.md` for manual checks and their status.
 
