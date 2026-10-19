@@ -31,8 +31,9 @@ button { font: inherit; cursor: pointer; }
 .skip-link:focus { transform: translateY(0); }
 .site-header { border-bottom: 1px solid var(--line); }
 .header-inner { display: flex; align-items: center; flex-wrap: wrap; gap: 1.25rem; padding-block: 1.2rem; }
-.wordmark { color: var(--text); font-size: 1.65rem; font-weight: 850; letter-spacing: -.08em; text-decoration: none; margin-right: auto; }
-.wordmark span, .monogram span { color: var(--accent); }
+.home-avatar { display: block; flex-shrink: 0; margin-right: auto; border-radius: 50%; }
+.home-avatar img { display: block; width: 56px; height: 56px; border-radius: 50%; object-fit: cover; }
+.monogram span { color: var(--accent); }
 nav { display: flex; flex-wrap: wrap; gap: 1.5rem; }
 nav a { color: var(--muted); text-decoration: none; font-size: .9rem; }
 nav a[aria-current] { color: var(--accent); text-decoration: underline; }
@@ -57,6 +58,7 @@ dd { margin: .2rem 0 0; font-size: .95rem; font-weight: 600; }
 h2 { font-size: clamp(1.8rem, 3vw, 2.4rem); line-height: 1.2; letter-spacing: -.04em; margin: 0; }
 .section-copy p { margin: 0 0 1rem; color: var(--muted); font-size: 1.05rem; }
 .interests-section { padding-block: 3.5rem; }
+.interest-list { display: grid; gap: 2rem; }
 .interest-card { border-left: 3px solid var(--accent); padding: .25rem 0 .25rem 1.5rem; }
 .interest-mark { font-size: 1.7rem; color: var(--accent); }
 h3 { margin: .5rem 0; font-size: 1.3rem; }

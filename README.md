@@ -8,10 +8,16 @@ Open `index.html` directly in a browser, or use VS Code Live Preview. No install
 
 ## Current features
 
-- Responsive Home page with background and AI interest sections.
+- Responsive Home page with background, AI interests, and Ravens fandom.
 - Keyboard-accessible mobile navigation and a dark mode toggle.
-- Plain HTML, CSS, and JavaScript with no external dependencies or assets.
+- Plain HTML, CSS, and JavaScript with no external dependencies.
 
 About, Projects, Skills, and Contact pages will be added in subsequent tasks. Home currently uses links to its own sections. GitHub Pages deployment has not yet been verified.
 
 See `TESTING.md` for manual checks and their status.
+
+## Image acknowledgment
+
+The header portrait of Lamar Jackson is an AI-generated illustration made with OpenAI's built-in image generation tool. The optimized asset is `images/lamar-jackson.jpg`.
+
+Generation prompt: "Create a square illustrated portrait of Lamar Jackson, Baltimore Ravens football quarterback, recognizable face, wearing a purple football jersey with number 8. Head and shoulders, face centered and large enough to read as a small website header avatar. Refined sports editorial illustration, purple background, clean lighting, no text or watermark. Opaque background."

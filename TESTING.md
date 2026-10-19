@@ -5,7 +5,7 @@ Run these checks locally during development and repeat them on the live GitHub P
 | ID | Testing | Steps | Expected result | Actual result |
 | --- | --- | --- | --- | --- |
 | T1 | Open locally | Double-click index.html. | Page, styles, and scripts load without a server. | Not run |
-| T2 | Home links | Activate the AM logo and Home link. | Both open index.html. | Not run |
+| T2 | Home links | Activate the Lamar Jackson header portrait and Home link. | Both open index.html. | Not run |
 | T3 | About links | Activate About me and Get to know me. | Both navigate to the Background section. | Not run |
 | T4 | Interests link | Activate My interests. | The AI interest section is reached. | Not run |
 | T5 | Back to top | Activate Back to top in the footer. | Main content is reached. | Not run |
@@ -20,5 +20,6 @@ Run these checks locally during development and repeat them on the live GitHub P
 | T14 | Home accessibility | Run Chrome Lighthouse Accessibility on Home. | Score is at least 90; record actual score and findings. | Not run |
 | T15 | Live deployment | Repeat T2–T14 at the published repository URL. | Relative paths and interactions work on GitHub Pages. | Not run |
 | T16 | Storage unavailable | Block browser storage, reload, and toggle theme. | Theme still switches without an uncaught storage error. | Not run |
+| T17 | Header portrait and football interests | View Home at phone and laptop widths in both themes. | Lamar Jackson portrait replaces the top-left initials without distortion; Ravens interest appears in the profile and interests section. | Not run |
 
 For failures, append dated results, fixes, and retest outcomes; preserve the original failed result.
