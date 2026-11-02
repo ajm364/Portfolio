@@ -1,6 +1,54 @@
+# Latest live-site test run — November 2, 2026
+
+Tested https://ajm364.github.io/Portfolio/ after deployment of commit f2d82ab. Browser: isolated headless Chrome 156.0.8078.74 on Windows. Phone-sized viewport: 375 × 900; laptop-sized viewport: 1366 × 900. Layout/behavior checks used 2× display scaling; final screenshots used 1× scaling. These are emulated viewport sizes, not photographs from physical devices.
+
+Home = index.html; About = about.html; Projects & Skills = projects.html; Contact = contact.html. All four pages were included in every row that says "all pages." No site code changed during this test run.
+
+| ID | What is tested | Steps | Expected result | Actual result |
+| --- | --- | --- | --- | --- |
+| L01 | Navigation on Home | Open Home; focus and press Enter on each internal link, including logo, nav, body links, skip link, and footer. | Exact destination or anchor reached. | Pass: all 9 internal link activations matched their destination. |
+| L02 | Navigation on About | Repeat L01 on About, including Explore my interests. | Correct pages and Home interests anchor reached. | Pass: all 8 matched. |
+| L03 | Navigation on Projects & Skills | Repeat L01 on Projects, then fetch each original model download. | Correct pages/anchors; downloads available. | Pass: all 7 internal link activations matched; all four STL files returned HTTP 200. |
+| L04 | Navigation on Contact | Repeat L01 on Contact; inspect email destinations separately. | Correct pages/anchors and approved mailto addresses. | Pass: all 8 internal activations matched. Mailto target source checks passed previously (T37); external email-app launch is L25. |
+| L05 | Home layout | Load at 375px and 1366px, switch light/dark, check scroll width; inspect screenshots. | No horizontal overflow; readable stacked/column layout. | Pass: no overflow in either theme at either width; dark screenshots inspected. |
+| L06 | About layout | Repeat L05 on About. | Education card stacks on phone and sits beside intro on laptop. | Pass: expected layout, no overflow in either theme at either width. |
+| L07 | Projects layout | Repeat L05 on Projects. | Viewer and project cards fit. | Pass: expected layout, no overflow in either theme at either width. |
+| L08 | Contact layout | Repeat L05 on Contact. | Email, button, and details card fit. | Pass: expected layout, no overflow in either theme at either width. |
+| L09 | Mobile menu on all pages | Focus Menu at 375px; press Enter, Tab to first nav link, then Escape. | Menu opens; first link is Home; Escape closes and returns focus. | Pass on all four pages with complete native Enter key events. |
+| L10 | Tab/Shift+Tab on all pages | Tab through each page, including viewer controls; Shift+Tab from theme to Menu with closed nav. | Visible outlines; hidden links skipped; focus can leave viewer. | Pass: no hidden nav focus or focused controls lacking outlines in recorded traversal; reverse navigation passed on all pages. |
+| L11 | Responsive focus on all pages | At laptop width focus a nav link; shrink to phone width. | Nav closes and focus moves to visible Menu button. | Pass on all pages (both viewport runs). |
+| L12 | Theme toggle on all pages | Switch to light and dark, inspect pressed state; reload in dark; activate theme by Space. | Colors/state match, stored dark preference survives reload, keyboard toggles. | Pass at both widths; Space activation passed on all four pages. |
+| L13 | Blocked storage on all pages | Inject a throwing localStorage getter before scripts load; reload and toggle theme. | Toggle remains usable without uncaught errors. | Pass on all four pages. |
+| L14 | JavaScript disabled on all pages | Disable script execution and reload each live page. | Text/nav remain; inactive menu/theme buttons hidden; STL links remain. | Pass: content and nav available; Projects retains 5 download links (selected model plus four cards). |
+| L15 | All four CAD models | Select each model; inspect visible pixels, status and download target. | Correct model renders with matching name/link. | Pass: counts 972, 928, 8,964, and 1,728 triangles respectively; all rendered. |
+| L16 | Viewer mouse controls | Use browser mouse events to drag, Shift-drag, right-drag, and wheel over focused canvas. Compare rendered images. | Rotation, both pan methods, and zoom change rendering. | Pass for all four interaction types. |
+| L17 | Viewer keyboard/buttons | For all models activate Zoom in and Reset; send rotate/pan keys. Then send native arrows, Shift+arrow, +, −, and Home. | Image changes appropriately; reset restores original image. | Pass for all models and all native keyboard commands tested. |
+| L18 | Emulated touch viewer | Dispatch one-finger drag, then two-finger pinch/pan through browser touch input. | Model image changes for both gestures. | Pass in touch emulation; separate physical-device test remains L26. |
+| L19 | Reload crash regression | Reload live Projects five times at 2× scaling; read model status and bitmap dimensions. | Model loads, no runaway size or renderer crash. | Pass in test browser: all five loads rendered at a stable 588 × 600 bitmap. Owner's original browser remains L27. |
+| L20 | STL download integrity | Fetch four live card downloads; check file length against binary STL triangle count. | HTTP 200 and length = 84 + 50 × triangle count. | Pass: 48,684; 46,484; 448,284; 86,484 bytes. |
+| L21 | Local file support | Navigate Chrome to each actual local HTML file. | External styles/scripts load without a server; Projects initializes. | Pass on all four pages. |
+| L22 | Basic accessibility and contrast | Inspect accessibility tree names, h1/current counts, image loading/alt attributes; calculate documented palette contrast. | Controls named; one h1/current marker; images have alt; text pairs meet 4.5:1. | Pass: zero unnamed controls/images; all structural checks passed; tested text color pairs range 6.08:1–17.06:1, including button hover. This is not a Lighthouse audit. |
+| L23 | Browser errors | Collect Runtime exceptions, console errors, and uncancelled network failures during first run; collect runtime/console errors during final run. | No captured errors. | Pass: empty error arrays in results.json and final-results.json. |
+| L24a | Home Lighthouse | Run Lighthouse Accessibility on live Home. | Score at least 90. | Not run: official PageSpeed Insights API returned HTTP 429 (quota/rate limit); no Lighthouse score obtained. |
+| L24b | About Lighthouse | Run Lighthouse Accessibility on live About. | Score at least 90. | Not run: no local Lighthouse runner available; remote audit unavailable as above. |
+| L24c | Projects Lighthouse | Run Lighthouse Accessibility on live Projects. | Score at least 90. | Not run: same limitation. |
+| L24d | Contact Lighthouse | Run Lighthouse Accessibility on live Contact. | Score at least 90. | Not run: same limitation. |
+| L25 | External email application | Activate each mailto link with a configured personal email app. | Draft addressed to ajm364@njit.edu. | Not run: no personal email client opened during automation. |
+| L26 | Physical phone interaction | Open live pages on a real phone; test gestures and scrolling outside viewer. | Usable real-device interaction. | Not run; emulated viewport/touch tests do not replace this check. |
+| L27 | Original crash environment | Repeat reload/zoom/pan in owner's browser that previously showed the crash icon. | Crash no longer occurs. | Not run in owner's browser; five test-browser reloads passed L19. |
+
+23 executed test groups passed. Seven remaining checks (four Lighthouse pages, email-app launch, physical phone, and owner's crash environment) are explicitly Not run. The separate Skills page and per-project static images remain omitted by owner decision; these test results do not assert full assignment-rubric compliance.
+
+Evidence: testing-artifacts/results.json, extended-results.json, final-results.json, and eight PNG screenshots named by page and viewport width. All saved screenshots are below 500 KB. The screenshots show dark mode; light-mode checks used computed colors and overflow measurements.
+
+Initial keyboard automation returned false for menu activation because its Enter event omitted the character event needed for native button activation. Preserved in results.json as keyboard-menu entries. Corrected automation sent keyDown, character, and keyUp; retests passed on all pages in extended-results.json. This was a test harness failure, not a website defect. No failed product check was erased or silently changed to Pass.
+
+To complete Lighthouse: open each live page in Chrome DevTools, choose Lighthouse → Accessibility, run the audit, and record each actual score and any fixes/retests here. No dependencies, frameworks, or build tools were installed for this testing.
+
+---
 # Portfolio test plan
 
-Run these checks locally during development and repeat them on the live GitHub Pages site before submission. Browser and live-site checks have not yet been run. Add page-specific navigation, layout, keyboard, and Lighthouse cases as the remaining pages are built.
+The tables below preserve the development plan and results as recorded at the time. The latest live-site execution is recorded above; its results supersede earlier Not run entries for the checks actually covered. Historical cases referring to a My interests navigation item are obsolete: that item was replaced by Contact; About still links to the interests section.
 
 | ID | Testing | Steps | Expected result | Actual result |
 | --- | --- | --- | --- | --- |
