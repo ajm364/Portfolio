@@ -1,0 +1,29 @@
+[
+    {
+        "test":  "no-js",
+        "details":  {
+                        "gmailAvailable":  true,
+                        "email":  true,
+                        "navVisible":  true,
+                        "copyHidden":  true
+                    }
+    },
+    {
+        "details":  {
+                        "width":  375,
+                        "scrollWidth":  375,
+                        "copyVisible":  true
+                    },
+        "expectedWidth":  375,
+        "test":  "layout"
+    },
+    {
+        "details":  {
+                        "width":  1366,
+                        "scrollWidth":  1366,
+                        "copyVisible":  true
+                    },
+        "expectedWidth":  1366,
+        "test":  "layout"
+    }
+]

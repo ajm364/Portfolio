@@ -70,3 +70,24 @@ if (themeButton) {
     }
   });
 }
+
+const copyEmailButton = document.querySelector('.copy-email');
+const emailAddress = document.querySelector('#email-address');
+const copyEmailStatus = document.querySelector('#copy-email-status');
+if (copyEmailButton && emailAddress && copyEmailStatus) {
+  copyEmailButton.hidden = false;
+  copyEmailButton.addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(emailAddress.textContent.trim());
+      copyEmailStatus.textContent = 'Email address copied: ajm364@njit.edu';
+    } catch {
+      // Selecting the address also works when clipboard access is unavailable.
+      const range = document.createRange();
+      range.selectNodeContents(emailAddress);
+      const selection = window.getSelection();
+      selection.removeAllRanges();
+      selection.addRange(range);
+      copyEmailStatus.textContent = 'Address selected. Use your device’s Copy command, or press Ctrl+C (Command+C on Mac).';
+    }
+  });
+}

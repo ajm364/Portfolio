@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Contact Alex Marshall by email at ajm364@njit.edu.">
   <title>Contact | Alex Marshall</title>
-  <link rel="stylesheet" href="css/styles.css">
-  <script src="js/main.js" defer></script>
+  <link rel="stylesheet" href="css/styles.css?v=contact-fix-1">
+  <script src="js/main.js?v=contact-fix-1" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -30,13 +30,19 @@
         <h1 id="contact-title">Let's get<br><span>in touch.</span></h1>
         <p class="intro">Have a question about my CAD models or portfolio? You can reach me by email.</p>
         <a class="button contact-email" href="mailto:ajm364@njit.edu">Email ajm364@njit.edu</a>
-        <p class="contact-note">This link opens your email app. You can also copy the address into your preferred email service.</p>
+        <p class="contact-note">The email link needs a configured email app. You can also write in Gmail in your browser or copy my address into any email service.</p>
+        <div class="contact-actions">
+          <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=ajm364%40njit.edu">Write in Gmail</a>
+          <button class="copy-email" type="button" hidden>Copy email address</button>
+        </div>
+        <p class="contact-note">Gmail may ask you to sign in. Review and send your message from your email service.</p>
+        <p id="copy-email-status" role="status"></p>
       </div>
       <aside class="profile-card" aria-labelledby="contact-details-title">
         <p class="eyebrow">Contact details</p>
         <h2 id="contact-details-title">Alex Marshall</h2>
         <dl>
-          <div><dt>Email</dt><dd><a class="contact-email" href="mailto:ajm364@njit.edu">ajm364@njit.edu</a></dd></div>
+          <div><dt>Email</dt><dd><a class="contact-email" id="email-address" href="mailto:ajm364@njit.edu">ajm364@njit.edu</a></dd></div>
           <div><dt>Explore my work</dt><dd><a href="projects.html">Onshape projects &amp; skills</a></dd></div>
         </dl>
       </aside>

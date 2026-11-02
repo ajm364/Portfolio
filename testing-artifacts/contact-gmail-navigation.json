@@ -1,0 +1,6 @@
+{
+    "destination":  "https://accounts.google.com/v3/signin/identifier",
+    "title":  "Gmail",
+    "ready":  "complete",
+    "composeRecipientPreserved":  true
+}

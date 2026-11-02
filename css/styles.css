@@ -20,6 +20,9 @@
 }
 * { box-sizing: border-box; }
 .contact-email { overflow-wrap: anywhere; }
+.contact-actions { display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; }
+.copy-email { font: inherit; padding: .6rem .8rem; min-height: 44px; border: 1px solid var(--accent); border-radius: .4rem; background: var(--surface); color: var(--accent); }
+.copy-email:hover { text-decoration: underline; }
 .contact-note { color: var(--muted); max-width: 48ch; font-size: .9rem; }
 .skills-summary { margin-block: 0 2rem; max-width: 68ch; }
 .skills-summary p:last-child { color: var(--muted); }

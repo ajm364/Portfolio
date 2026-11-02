@@ -21,11 +21,11 @@ Verified on November 2, 2026: all four published pages and all four STL download
 
 The Projects page showcases four Onshape CAD models with an interactive 3D viewer: rotate, zoom, pan, reset, model selection, touch gestures, and keyboard controls. The viewer uses vanilla JavaScript and Canvas with embedded STL coordinates so it also works when opened directly. Original STL downloads are included in models/. To update a model, both the STL and its embedded coordinates in js/models.js must be updated. Home, About Me, Projects & Skills, and Contact are linked through shared navigation.
 
-The owner chose to combine Projects and Skills on `projects.html` rather than create a separate Skills page. The combined page highlights Onshape CAD modeling. Contact is available at `contact.html` using the owner-approved email address, ajm364@njit.edu. All four pages share navigation. A separate Skills page remains an assignment requirement that this combined structure does not meet.
+The owner chose to combine Projects and Skills on `projects.html` rather than create a separate Skills page. The combined page highlights Onshape CAD modeling. Contact is available at `contact.html` using the owner-approved email address, ajm364@njit.edu, with an email-app link, browser-based Gmail compose link, and a copy-address button. All four pages share navigation. A separate Skills page remains an assignment requirement that this combined structure does not meet.
 
 See `TESTING.md` for manual checks and their status.
 
-Live-site browser testing on November 2, 2026 covered navigation, 375px/1366px layouts, keyboard input, themes, model controls, downloads, and JavaScript-disabled viewing. Genuine screenshots and raw results are saved in `testing-artifacts/`. Touch gestures were emulated; Lighthouse scores and testing on a physical phone remain pending.
+Live-site browser testing on November 2, 2026 covered navigation, 375px/1366px layouts, keyboard input, themes, model controls, downloads, and JavaScript-disabled viewing. Genuine screenshots and raw results are saved in `testing-artifacts/`. All four published pages scored 100/100 in Lighthouse 13.5.0 Accessibility snapshot audits, with optional report screenshot capture disabled. The owner also reported that the site works on a physical phone. See `TESTING.md` for the email fix, retest status, preserved audit infrastructure errors, and any outstanding manual checks.
 
 ## Image acknowledgment
 
