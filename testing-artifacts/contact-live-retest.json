@@ -1,0 +1,80 @@
+[
+    {
+        "test":  "deployed",
+        "details":  {
+                        "url":  "https://ajm364.github.io/Portfolio/contact.html",
+                        "copyPresent":  true,
+                        "gmailPresent":  true
+                    }
+    },
+    {
+        "expectedTheme":  "light",
+        "details":  {
+                        "width":  375,
+                        "scrollWidth":  375,
+                        "theme":  "light"
+                    },
+        "expectedWidth":  375,
+        "test":  "layout"
+    },
+    {
+        "expectedTheme":  "dark",
+        "details":  {
+                        "width":  375,
+                        "scrollWidth":  375,
+                        "theme":  "dark"
+                    },
+        "expectedWidth":  375,
+        "test":  "layout"
+    },
+    {
+        "expectedTheme":  "light",
+        "details":  {
+                        "width":  1366,
+                        "scrollWidth":  1366,
+                        "theme":  "light"
+                    },
+        "expectedWidth":  1366,
+        "test":  "layout"
+    },
+    {
+        "expectedTheme":  "dark",
+        "details":  {
+                        "width":  1366,
+                        "scrollWidth":  1366,
+                        "theme":  "dark"
+                    },
+        "expectedWidth":  1366,
+        "test":  "layout"
+    },
+    {
+        "test":  "copy-keyboard",
+        "details":  {
+                        "status":  "Email address copied: ajm364@njit.edu",
+                        "focused":  "copy-email"
+                    }
+    },
+    {
+        "test":  "copy-blocked",
+        "details":  {
+                        "status":  "Address selected. Use your device’s Copy command, or press Ctrl+C (Command+C on Mac).",
+                        "selection":  "ajm364@njit.edu"
+                    }
+    },
+    {
+        "test":  "no-js",
+        "details":  {
+                        "gmailAvailable":  true,
+                        "navVisible":  true,
+                        "copyHidden":  true
+                    }
+    },
+    {
+        "test":  "gmail-keyboard",
+        "details":  {
+                        "destination":  "https://accounts.google.com/v3/signin/identifier",
+                        "title":  "Gmail",
+                        "recipientPreserved":  true
+                    }
+    }
+]

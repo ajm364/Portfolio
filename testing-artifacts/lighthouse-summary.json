@@ -1,0 +1,50 @@
+[
+    {
+        "runtimeError":  null,
+        "failedAudits":  [
+
+                         ],
+        "score":  100,
+        "page":  "home",
+        "warnings":  [
+
+                     ],
+        "url":  "https://ajm364.github.io/Portfolio/index.html"
+    },
+    {
+        "runtimeError":  null,
+        "failedAudits":  [
+
+                         ],
+        "score":  100,
+        "page":  "about",
+        "warnings":  [
+
+                     ],
+        "url":  "https://ajm364.github.io/Portfolio/about.html"
+    },
+    {
+        "runtimeError":  null,
+        "failedAudits":  [
+
+                         ],
+        "score":  100,
+        "page":  "projects",
+        "warnings":  [
+
+                     ],
+        "url":  "https://ajm364.github.io/Portfolio/projects.html"
+    },
+    {
+        "runtimeError":  null,
+        "failedAudits":  [
+
+                         ],
+        "score":  100,
+        "page":  "contact",
+        "warnings":  [
+
+                     ],
+        "url":  "https://ajm364.github.io/Portfolio/contact.html"
+    }
+]
