@@ -64,3 +64,13 @@ For failures, append dated results, fixes, and retest outcomes; preserve the ori
 | T43 | Live site and updated navigation | Repeat T38–T42 live; test every updated navigation link and keyboard flow on all four pages at phone/laptop widths. | All links, layouts, and interactions work under repository path. | Not run |
 
 Added the owner-approved email and a combined Onshape skills section. No proficiency level or additional skills invented. Source checks and git diff --check passed. Browser layout, keyboard, email-app launch, and Lighthouse checks remain Not run; headless browser preview previously failed in this environment. No push or deployment performed.
+## Viewer crash regression — 2026-11-02
+
+Owner reported model enlargement/movement followed by the browser's crashed-renderer icon on reload. Earlier fresh-browser rendering checks did not reproduce that failure. Fix: keep the CSS display size independent of bitmap dimensions, cap bitmap resolution at 2048 pixels per dimension, allocate only on dimension changes, observe the container instead of the canvas, and version the viewer/CSS URLs.
+
+| ID | Testing | Steps | Expected result | Actual result |
+| --- | --- | --- | --- | --- |
+| T44 | High-DPI sizing with missing styles | In headless Chrome at 2× display scaling, remove the stylesheet in a temporary test page, set body widths to 375 and 1366, select every model, then zoom, rotate and pan with synthetic control/key events. Read bitmap dimensions and rendered pixels after each selection. | Every model paints pixels, bitmap remains bounded, and height stays stable across interactions; no JS errors. | Pass: eight model/width combinations rendered and stayed stable; maximum bitmap width 2048; zero captured errors. Headless timing delayed some resize observations; full visual layout testing remains separate. |
+| T45 | Owner's reload crash | Reload the updated live Projects page repeatedly in the browser that originally crashed, then rotate/pan/zoom all models. | No uncontrolled enlargement, movement, or crashed-renderer icon. | Not run; requires retest in affected browser after deployment. |
+
+Temporary browser probe removed after execution. Browser checks used a local file with stylesheet deliberately removed; these results do not constitute Lighthouse, touch, full keyboard navigation, or live-site interaction verification.

@@ -7,6 +7,10 @@
   const select = document.querySelector('#model-select');
   const download = document.querySelector('#model-download');
   const status = document.querySelector('#model-status');
+  // Keep layout independent of the bitmap, including while cached CSS is loading.
+  canvas.style.display = 'block';
+  canvas.style.width = '100%';
+  canvas.style.height = 'clamp(300px, 55vw, 540px)';
   let vertices, yaw, pitch, zoom, panX, panY;
   let scheduled = false;
   const pointers = new Map();
@@ -44,9 +48,13 @@
   function draw() {
     const width = canvas.clientWidth;
     const height = canvas.clientHeight;
-    const ratio = Math.min(window.devicePixelRatio || 1, 2);
-    canvas.width = Math.round(width * ratio);
-    canvas.height = Math.round(height * ratio);
+    if (!width || !height || !vertices) return;
+    const ratio = Math.min(window.devicePixelRatio || 1, 2, 2048 / width, 2048 / height);
+    const bitmapWidth = Math.max(1, Math.round(width * ratio));
+    const bitmapHeight = Math.max(1, Math.round(height * ratio));
+    // Reallocating the bitmap on every frame wastes memory and can cause crashes.
+    if (canvas.width !== bitmapWidth) canvas.width = bitmapWidth;
+    if (canvas.height !== bitmapHeight) canvas.height = bitmapHeight;
     context.setTransform(ratio, 0, 0, ratio, 0, 0);
     context.fillStyle = '#101d32';
     context.fillRect(0, 0, width, height);
@@ -143,6 +151,8 @@
     if (event.key === '-') { event.preventDefault(); changeZoom(1 / 1.2); }
     if (event.key === 'Home') { event.preventDefault(); reset(); }
   });
-  new ResizeObserver(drawSoon).observe(canvas);
+  // Observe the container rather than feeding bitmap changes back into resizing.
+  if (window.ResizeObserver) new ResizeObserver(drawSoon).observe(canvas.parentElement);
+  window.addEventListener('resize', drawSoon);
   load();
 })();
