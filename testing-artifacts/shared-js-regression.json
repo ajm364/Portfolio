@@ -1,0 +1,38 @@
+[
+    {
+        "page":  "index.html",
+        "details":  {
+                        "opens":  true,
+                        "closes":  true,
+                        "themeWorks":  true,
+                        "copyControlExpected":  true
+                    }
+    },
+    {
+        "page":  "about.html",
+        "details":  {
+                        "opens":  true,
+                        "closes":  true,
+                        "themeWorks":  true,
+                        "copyControlExpected":  true
+                    }
+    },
+    {
+        "page":  "projects.html",
+        "details":  {
+                        "opens":  true,
+                        "closes":  true,
+                        "themeWorks":  true,
+                        "copyControlExpected":  true
+                    }
+    },
+    {
+        "page":  "contact.html",
+        "details":  {
+                        "opens":  true,
+                        "closes":  true,
+                        "themeWorks":  true,
+                        "copyControlExpected":  true
+                    }
+    }
+]
