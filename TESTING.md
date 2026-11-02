@@ -50,3 +50,17 @@ For failures, append dated results, fixes, and retest outcomes; preserve the ori
 | T35 | Binary STL integrity | Check each file length equals 84 + triangle count × 50 and vertex coordinates are finite during conversion. | All four files validate. | Pass (2026-11-02) |
 
 2026-11-02: Added Projects with four owner-provided STL models made in Onshape. Source target/structure and STL integrity checks passed, as did git diff --check. Chrome headless preview failed with GPU process errors; a second attempt produced no usable result. Rendering, interaction, phone/laptop, keyboard, and Lighthouse checks remain Not run. Project-specific class context and fuller descriptions still need owner input. No deployment performed.
+## Contact and combined skills page — 2026-11-02
+
+| ID | Testing | Steps | Expected result | Actual result |
+| --- | --- | --- | --- | --- |
+| T36 | Four-page navigation and source structure | Check nav destinations, local href/src targets, h1 count, and aria-current count on Home, About, Projects & Skills, and Contact. | All four pages linked; local targets exist; exactly one h1 and current marker per page. | Pass (PowerShell source checks, 2026-11-02) |
+| T37 | Contact email destinations | Inspect both Contact email links. | Both use exactly mailto:ajm364@njit.edu. | Pass (PowerShell source checks, 2026-11-02) |
+| T38 | Contact links in browser | Activate every navigation link, header portrait, both email links, project link, and Back to top. | Pages/anchors open correctly; email links open configured email app. | Not run |
+| T39 | Contact phone and laptop | View contact.html at 375px and 1366px in both themes. | Content fits without sideways scrolling; email wraps when needed. | Not run |
+| T40 | Contact keyboard and shared scripts | Tab/Shift+Tab through Contact; activate with Enter/Space. Test mobile menu, Escape, resize, theme, and blocked storage. | Visible focus and working controls; closed menu links skipped; theme switches. | Not run |
+| T41 | Contact without JavaScript | Disable JavaScript and open contact.html locally. | Content, navigation, and email links work; inactive controls hidden. | Not run |
+| T42 | Contact Lighthouse | Run Lighthouse Accessibility on Contact. | Score at least 90; record score. | Not run |
+| T43 | Live site and updated navigation | Repeat T38–T42 live; test every updated navigation link and keyboard flow on all four pages at phone/laptop widths. | All links, layouts, and interactions work under repository path. | Not run |
+
+Added the owner-approved email and a combined Onshape skills section. No proficiency level or additional skills invented. Source checks and git diff --check passed. Browser layout, keyboard, email-app launch, and Lighthouse checks remain Not run; headless browser preview previously failed in this environment. No push or deployment performed.

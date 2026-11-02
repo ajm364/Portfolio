@@ -19,6 +19,10 @@
   --tint: #1b2d4c;
 }
 * { box-sizing: border-box; }
+.contact-email { overflow-wrap: anywhere; }
+.contact-note { color: var(--muted); max-width: 48ch; font-size: .9rem; }
+.skills-summary { margin-block: 0 2rem; max-width: 68ch; }
+.skills-summary p:last-child { color: var(--muted); }
 .projects-page { padding-block: 4rem; }
 .model-viewer { padding: clamp(1rem, 3vw, 2rem); background: var(--surface); border: 1px solid var(--line); border-radius: 1rem; }
 .viewer-heading { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem; }

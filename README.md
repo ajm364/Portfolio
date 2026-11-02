@@ -13,7 +13,9 @@ Open `index.html` directly in a browser, or use VS Code Live Preview. No install
 - Keyboard-accessible mobile navigation and a dark mode toggle.
 - Plain HTML, CSS, and JavaScript with no external dependencies.
 
-The Projects page showcases four Onshape CAD models with an interactive 3D viewer: rotate, zoom, pan, reset, model selection, touch gestures, and keyboard controls. The viewer uses vanilla JavaScript and Canvas with embedded STL coordinates so it also works when opened directly. Original STL downloads are included in models/. To update a model, both the STL and its embedded coordinates in js/models.js must be updated. Skills and Contact pages will be added in subsequent tasks. Home, About Me, and Projects are linked through shared navigation. GitHub Pages deployment has not yet been verified.
+The Projects page showcases four Onshape CAD models with an interactive 3D viewer: rotate, zoom, pan, reset, model selection, touch gestures, and keyboard controls. The viewer uses vanilla JavaScript and Canvas with embedded STL coordinates so it also works when opened directly. Original STL downloads are included in models/. To update a model, both the STL and its embedded coordinates in js/models.js must be updated. Home, About Me, Projects & Skills, and Contact are linked through shared navigation. GitHub Pages deployment has not yet been verified.
+
+The owner chose to combine Projects and Skills on `projects.html` rather than create a separate Skills page. The combined page highlights Onshape CAD modeling. Contact is available at `contact.html` using the owner-approved email address, ajm364@njit.edu. All four pages share navigation. A separate Skills page remains an assignment requirement that this combined structure does not meet.
 
 See `TESTING.md` for manual checks and their status.
 
