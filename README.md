@@ -13,7 +13,7 @@ Open `index.html` directly in a browser, or use VS Code Live Preview. No install
 - Keyboard-accessible mobile navigation and a dark mode toggle.
 - Plain HTML, CSS, and JavaScript with no external dependencies.
 
-Projects, Skills, and Contact pages will be added in subsequent tasks. Home and About Me are linked through shared navigation. GitHub Pages deployment has not yet been verified.
+The Projects page showcases four Onshape CAD models with an interactive 3D viewer: rotate, zoom, pan, reset, model selection, touch gestures, and keyboard controls. The viewer uses vanilla JavaScript and Canvas with embedded STL coordinates so it also works when opened directly. Original STL downloads are included in models/. To update a model, both the STL and its embedded coordinates in js/models.js must be updated. Skills and Contact pages will be added in subsequent tasks. Home, About Me, and Projects are linked through shared navigation. GitHub Pages deployment has not yet been verified.
 
 See `TESTING.md` for manual checks and their status.
 

@@ -31,3 +31,22 @@ Run these checks locally during development and repeat them on the live GitHub P
 For failures, append dated results, fixes, and retest outcomes; preserve the original failed result.
 
 2026-10-22: Expanded the About Me football paragraph with the owner's love of Lamar Jackson and appreciation of his passing, running, and creativity. Reviewed the source change and ran `git diff --check` successfully. Phone/laptop browser and keyboard checks for this edit: Not run (no browser automation available in this session).
+
+## Projects viewer checks
+
+| ID | Testing | Steps | Expected result | Actual result |
+| --- | --- | --- | --- | --- |
+| T24 | Projects navigation | On Home, About, and Projects, activate every header link; on Projects also activate the portrait, downloads, and Back to top. | Destinations resolve; Projects alone has its current-page marker. | Not run |
+| T25 | Projects phone/laptop | Open projects.html at 375px and 1366px in both themes. | Viewer and cards fit with no horizontal scrolling. | Not run |
+| T26 | Model selection | Select all four models. | Each renders; model name, triangle count, and download match. | Not run |
+| T27 | Pointer controls | Drag, Shift-drag, right-drag; focus canvas and scroll; use zoom/rotate/reset buttons. | Rotation, pan, bounded zoom, and reset work. | Not run |
+| T28 | Touch controls | On a touchscreen, drag, pinch, and move two fingers. | One finger rotates; two fingers zoom and pan; page scrolls outside canvas. | Not run |
+| T29 | Projects keyboard | Tab and Shift+Tab through page; use Enter/Space on controls, arrows and Shift+arrows on canvas, +/−, Home, and menu Escape. | Visible focus; controls and model manipulation work; no keyboard trap. | Not run |
+| T30 | Projects shared scripts | Repeat menu resizing, theme persistence, and blocked-storage checks on Projects. | Menu and theme work consistently with Home/About. | Not run |
+| T31 | Projects without JavaScript | Disable JavaScript and open projects.html directly. | Navigation, descriptions, and all four original STL download links remain available. | Not run |
+| T32 | Projects accessibility | Run Lighthouse Accessibility on projects.html. | Score at least 90; record score/findings. | Not run |
+| T33 | Projects live site | Repeat T24–T32 on verified GitHub Pages URL. | Relative assets, models, and interactions work under the repository path. | Not run |
+| T34 | Source structure and targets | Check local href/src destinations, exactly one h1 and current-page marker in each built page. | All targets exist and counts equal one. | Pass (2026-11-02, PowerShell source checks) |
+| T35 | Binary STL integrity | Check each file length equals 84 + triangle count × 50 and vertex coordinates are finite during conversion. | All four files validate. | Pass (2026-11-02) |
+
+2026-11-02: Added Projects with four owner-provided STL models made in Onshape. Source target/structure and STL integrity checks passed, as did git diff --check. Chrome headless preview failed with GPU process errors; a second attempt produced no usable result. Rendering, interaction, phone/laptop, keyboard, and Lighthouse checks remain Not run. Project-specific class context and fuller descriptions still need owner input. No deployment performed.

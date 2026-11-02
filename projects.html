@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore Alex Marshall's CAD models in an interactive 3D viewer.">
+  <title>Projects | Alex Marshall</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/main.js" defer></script>
+  <script src="js/models.js" defer></script>
+  <script src="js/viewer.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="home-avatar" href="index.html" aria-label="Alex Marshall, home"><img src="images/lamar-jackson.jpg" alt="AI-generated illustration of Lamar Jackson in a purple football jersey" width="56" height="56"></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" hidden>Menu</button>
+      <nav id="main-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About me</a>
+        <a href="projects.html" aria-current="page">Projects</a>
+        <a href="index.html#interests">My interests</a>
+      </nav>
+      <button class="theme-toggle" type="button" aria-pressed="false" hidden>Dark mode</button>
+    </div>
+  </header>
+  <main id="main" class="container projects-page">
+    <p class="eyebrow">Alex Marshall / Projects</p>
+    <h1>Made in CAD.<br><span>Explore in 3D.</span></h1>
+    <p class="intro">I used Onshape to create these CAD models: Aluminum Hanger, Angled Plate, Base plate, and Signet Ring. Rotate each design to see it from different angles.</p>
+    <section class="model-viewer" aria-labelledby="viewer-title">
+      <div class="viewer-heading"><h2 id="viewer-title">CAD model explorer</h2><span class="viewer-badge">Interactive 3D</span></div>
+      <div id="viewer-controls" hidden>
+        <label for="model-select">Choose a model</label>
+        <select id="model-select">
+          <option value="0">Aluminum Hanger</option>
+          <option value="1">Angled Plate</option>
+          <option value="2">Base plate</option>
+          <option value="3">Signet Ring</option>
+        </select>
+        <div class="viewer-actions" aria-label="View controls">
+          <button type="button" data-action="left">Rotate left</button>
+          <button type="button" data-action="right">Rotate right</button>
+          <button type="button" data-action="in">Zoom in</button>
+          <button type="button" data-action="out">Zoom out</button>
+          <button type="button" data-action="reset">Reset view</button>
+        </div>
+      </div>
+      <canvas id="model-canvas" tabindex="0" aria-label="Interactive CAD model" aria-describedby="viewer-help">Interactive 3D viewing requires JavaScript and canvas support. Download the STL models below to open them in CAD software.</canvas>
+      <p id="model-status" role="status">Download the STL models below to explore them in your CAD software.</p>
+      <p id="viewer-help">Drag to rotate. Shift-drag or right-drag to pan. Click the viewer, then scroll to zoom. On touchscreens, use one finger to rotate or two fingers to pan and pinch to zoom. With the viewer focused: arrow keys rotate, Shift + arrows pan, + / − zoom, and Home resets the view.</p>
+      <a id="model-download" href="models/aluminum-hanger.stl" download>Download Aluminum Hanger STL</a>
+    </section>
+    <section class="model-library" aria-labelledby="library-title">
+      <p class="eyebrow">The model collection</p>
+      <h2 id="library-title">Explore the original files.</h2>
+      <div class="project-grid">
+        <article class="project-card"><h3>Aluminum Hanger</h3><p>A CAD model of an aluminum hanger.</p><a href="models/aluminum-hanger.stl" download>Download Aluminum Hanger STL</a></article>
+        <article class="project-card"><h3>Angled Plate</h3><p>A CAD model of an angled plate.</p><a href="models/angled-plate.stl" download>Download Angled Plate STL</a></article>
+        <article class="project-card"><h3>Base plate</h3><p>A CAD model of a base plate.</p><a href="models/base-plate.stl" download>Download Base plate STL</a></article>
+        <article class="project-card"><h3>Signet Ring</h3><p>A CAD model of a signet ring.</p><a href="models/signet-ring.stl" download>Download Signet Ring STL</a></article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="container footer-inner"><p>Alex Marshall <span aria-hidden="true">/</span> Portfolio</p><a href="#main">Back to top ↑</a></div></footer>
+</body>
+</html>
